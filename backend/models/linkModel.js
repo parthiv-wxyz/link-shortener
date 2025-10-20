@@ -3,7 +3,7 @@ import sequelize from "../config/db.js";
 
 const Link = sequelize.define("Link", {
     originalUrl: {type: DataTypes.STRING, allowNull: false},
-    shortUrl: {type: DataTypes.STRING, allowNull: false, unique: true},
+    // shortUrl: {type: DataTypes.STRING, allowNull: false, unique: true},
     clicks: {type: DataTypes.INTEGER, defaultValue: 0},
     slug:{type: DataTypes.STRING, allowNull: false, unique: true},
 });
