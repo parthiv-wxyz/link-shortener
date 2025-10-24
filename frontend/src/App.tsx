@@ -1,10 +1,11 @@
 import React from "react";
-import LinkForm from "./components/LinkForm";
+import './App.css';
+import Home from "./pages/home";
 
 const App = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <LinkForm />
+    <div>
+      <Home />
     </div>
   );
 };
