@@ -21,7 +21,7 @@ const LinkForm: React.FC = () => {
           value={originalUrl}
           onChange={(e) => setOriginalUrl(e.target.value)}
           required
-          className="border p-2 rounded"
+          className="border bg-gray-100 p-2 rounded"
         />
         <button
           type="submit"
