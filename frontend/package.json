@@ -8,11 +8,12 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview --port 8080",
-    "start": "serve -s dist -l $PORT"
+    "start": "node server.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.75.1",
     "@tailwindcss/vite": "^4.1.16",
+    "express": "^5.1.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.4",
