@@ -21,6 +21,7 @@ export const redirectToOriginalUrl = async (req, res) => {
   try {
     const { slug } = req.params;
     const link = await Link.findOne({ where: { slug } });
+    console.log("Link lookup:", slug, link);
 
     if (!link) return res.status(404).json({ message: "Link not found" });
 
