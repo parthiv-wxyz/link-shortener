@@ -20,8 +20,10 @@ export const createShortLink = async (req, res) => {
 export const redirectToOriginalUrl = async (req, res) => {
   try {
     const { slug } = req.params;
-    const link = await Link.findOne({ where: { slug } });
-    console.log("Link lookup:", slug, link);
+    // const link = await Link.findOne({ where: { slug } });
+    // console.log("Link lookup:", slug, link);
+const links = await Link.findAll();
+console.log('All links:', links);
 
     if (!link) return res.status(404).json({ message: "Link not found" });
 
