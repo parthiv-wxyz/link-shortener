@@ -9,10 +9,15 @@ export const createShortLink = async (req, res) => {
       return res.status(400).json({ message: "URL is required" });
 
     const slug = nanoid(6); // generates unique 6-character slug
-    
+    const newLink=await Link.create({
+      originalUrl,
+      slug,
+      clicks: 0,
+    })
+    console.log("Created link:", newLink.dataValues);
     res.json({ shortUrl: `${process.env.BASE_URL}/${slug}` });
   } catch (error) {
-    console.error(error); // log actual error for debugging
+    console.error(error);
     res.status(500).json({ message: "Server Error" });
   }
 };
@@ -20,10 +25,7 @@ export const createShortLink = async (req, res) => {
 export const redirectToOriginalUrl = async (req, res) => {
   try {
     const { slug } = req.params;
-    // const link = await Link.findOne({ where: { slug } });
-    // console.log("Link lookup:", slug, link);
-const links = await Link.findAll();
-console.log('All links:', links);
+    const link = await Link.findOne({ where: { slug } });
 
     if (!link) return res.status(404).json({ message: "Link not found" });
 
