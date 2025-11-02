@@ -9,11 +9,11 @@ export const createShortLink = async (req, res) => {
       return res.status(400).json({ message: "URL is required" });
 
     const slug = nanoid(6); // generates unique 6-character slug
-    const newLink=await Link.create({
+    const newLink = await Link.create({
       originalUrl,
       slug,
       clicks: 0,
-    })
+    });
     console.log("Created link:", newLink.dataValues);
     res.json({ shortUrl: `${process.env.BASE_URL}/${slug}` });
   } catch (error) {

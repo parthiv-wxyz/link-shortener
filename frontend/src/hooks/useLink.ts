@@ -28,5 +28,12 @@ export const useLink = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  return { shortLink, loading, error, copied, createShortLink, copyToClipboard };
+  return {
+    shortLink,
+    loading,
+    error,
+    copied,
+    createShortLink,
+    copyToClipboard,
+  };
 };
