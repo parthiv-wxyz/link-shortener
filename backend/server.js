@@ -9,7 +9,21 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = ["https://link-shortener-orpin-zeta.vercel.app"];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use("/", linkRoutes);
 app.use(errorHandler);
