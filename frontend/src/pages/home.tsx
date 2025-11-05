@@ -1,6 +1,6 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import LinkForm from '../components/LinkForm'
+import Header from '@/components/Header/header'
+import Footer from '@/components/Footer/Footer'
+import LinkForm from '@/components/LinkForm/LinkForm'
 
 const home = () => {
   return (
