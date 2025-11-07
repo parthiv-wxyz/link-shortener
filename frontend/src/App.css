@@ -26,7 +26,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.3;
   text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  min-height: 100%;
 }
-body, button, input, textarea {
-    font-family: Inter, sans-serif !important;
+body,
+button,
+input,
+textarea {
+  font-family: Inter, sans-serif !important;
 }

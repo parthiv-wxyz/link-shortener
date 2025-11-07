@@ -1,10 +1,12 @@
 
-const hero = () => {
+const Hero = () => {
   return (
-    <div>
-      
+    <div className="bg-[#7ecdfb]">
+      <div className="mt-[88px] py-20 flex flex-col justify-center items-center">
+        
+      </div>
     </div>
   )
 }
 
-export default hero
+export default Hero

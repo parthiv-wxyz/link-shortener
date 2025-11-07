@@ -1,9 +1,16 @@
 import React, { useState } from "react";
-import { useLink } from "../../hooks/useLink";
+import { useLink } from "@/hooks/useLink";
 
 const LinkForm: React.FC = () => {
   const [originalUrl, setOriginalUrl] = useState("");
-  const { shortLink, loading, error, copied, createShortLink, copyToClipboard } = useLink();
+  const {
+    shortLink,
+    loading,
+    error,
+    copied,
+    createShortLink,
+    copyToClipboard,
+  } = useLink();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
