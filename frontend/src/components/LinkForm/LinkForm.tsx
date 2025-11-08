@@ -1,9 +1,16 @@
 import React, { useState } from "react";
-import { useLink } from "../hooks/useLink";
+import { useLink } from "@/hooks/useLink";
 
 const LinkForm: React.FC = () => {
   const [originalUrl, setOriginalUrl] = useState("");
-  const { shortLink, loading, error, copied, createShortLink, copyToClipboard } = useLink();
+  const {
+    shortLink,
+    loading,
+    error,
+    copied,
+    createShortLink,
+    copyToClipboard,
+  } = useLink();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -13,23 +20,25 @@ const LinkForm: React.FC = () => {
   };
 
   return (
-    <div className="p-6 max-w-md mx-auto">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
-          type="url"
-          placeholder="Enter URL"
-          value={originalUrl}
-          onChange={(e) => setOriginalUrl(e.target.value)}
-          required
-          className="border bg-gray-100 p-2 rounded"
-        />
-        <button
-          type="submit"
-          disabled={loading}
-          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
-        >
-          {loading ? "Shortening..." : "Shorten URL"}
-        </button>
+    <div className="items-center">
+      <form onSubmit={handleSubmit} className="flex gap-4 pt-16 pb-6">
+        <div className="flex flex-col w-full justify-between pr-2.5 py-2.5 pl-7.5 bg-white rounded md:flex-row">
+          <input
+            type="url"
+            placeholder="Enter link here"
+            value={originalUrl}
+            onChange={(e) => setOriginalUrl(e.target.value)}
+            required
+            className="border-none bg-white p-2 rounded w-full"
+          />
+          <button
+            type="submit"
+            disabled={loading}
+            className="shortenbtn bg-[#ecf0f2] text-white py-[9px] px-4.5 rounded hover:bg-blue-600 whitespace-nowrap"
+          >
+            <span>{loading ? "Shortening..." : "Shorten for free"}</span>
+          </button>
+        </div>
       </form>
 
       {error && <p className="text-red-500 mt-2">{error}</p>}
