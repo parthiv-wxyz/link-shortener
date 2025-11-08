@@ -1,0 +1,13 @@
+h1{
+    font-family:  Catalogue, sans-serif !important;
+}
+p{
+    line-height: 1.4;
+    margin: 0;
+}
+.shortenbtn{
+    color: #707d84;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+}

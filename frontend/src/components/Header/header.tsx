@@ -32,24 +32,27 @@ const Icon = ({
 
 const Header = () => {
   return (
-    <div className="w-full p-4 mb-6">
+    <div className="w-full">
       <div className="mobile-nav"></div>
-      <div className="desktop-nav flex px-8 py-5 fixed top-0 z-2 left-0 items-center justify-around w-full">
+      <div className="desktop-nav flex px-8 py-5 fixed top-0 z-2 left-0 items-center justify-between w-full md:flex">
         <a
           href="https://rebrandly.com/"
           className="logo flex text-15px font-normal whitespace-nowrap decoration-0"
         >
           Powered by
-          <img src={rebrandly} width="110" height="28" alt="rebrandly-logo" />
+          <img src={rebrandly} width="110" height="28" alt="rebrandly-logo" className="A"/>
         </a>
-        <div className="flex flex-col justify-between items-center mx-auto max-w-7xl px-6 w-full">
+        <div className="hidden flex-col justify-between items-center mx-auto max-w-7xl px-6 w-full lg:flex">
           <div className="flex items-center gap-3 justify-center w-full">
             <Icon href="#" text="Free URL Shortener" bg="bg-[#c6e9ff]" />
             <Icon href="#" text="Free QR Code Generator" bg="" />
           </div>
         </div>
         <div className="whitespace-nowrap">
-          <a href="#" className="rounded-md font-semibold py-[9px] px-[18px] bg-black text-white">Sign up for free</a>
+          <a href="#" className="hidden rounded-md font-semibold py-[9px] px-[18px] bg-black text-white lg:block">Sign up for free</a>
+          <div className="rounded-sm border-black outline p-3 lg:hidden">
+            <img width="22" height="22" src="https://img.icons8.com/ios-filled/50/menu--v1.png" alt="menu--v1"/>
+          </div>
         </div>
       </div>
     </div>
